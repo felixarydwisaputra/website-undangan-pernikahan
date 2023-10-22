@@ -1,0 +1,363 @@
+:root{
+    --pink: rgb(255, 99, 125);    
+    --bg: #fff;
+    --shadow: 1px 1px 3px rgba(0,0,0,.5);
+    --sans: 'Work Sans', sans-serif;
+    --sacra: 'Sacramento', cursive;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--bg);
+    font-family: var(--sans);
+}
+
+/* hero */
+.hero{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(../img/wedd.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, black, rgba(0,0,0,0));
+}
+
+.hero main{
+    z-index: 1;
+}
+
+.hero main h3{
+    letter-spacing: 2px;
+}
+
+.hero main h1{
+    font-family: var(--sacra);
+    font-size: 9rem;
+    margin-top: 2rem;
+    font-weight: bold;
+    text-shadow: var(--shadow);
+}
+
+.hero main a{
+    background-color: white;
+}
+
+
+.hero main a:hover{
+    background-color: var(--pink);
+}
+
+/* navbar */
+.mynavbar{
+    background-color: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(2px);
+    padding: 0 7%;
+}
+
+.navbar .offcanvas{
+    height: 100vh;
+}
+
+.navbar .navbar-brand,
+.navbar .offcanvas-title{
+    font-family: var(--sacra);
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* home */
+.home{
+    position: relative;
+    min-height: 80vh;
+}
+
+.home .art1{
+    position: absolute;
+    top: -115px;
+    left: -90px;
+    transform: rotate(-45deg);
+    opacity: .25;
+}
+
+.home .art2{
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    transform: rotate(120deg);
+    opacity: .25;
+}
+
+.home .hias{
+    position: absolute;
+    width: 15rem;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-7.5rem);
+
+}
+
+.home .title h1,
+.info .title h1,
+.story .title h1,
+.gallery .title h1{
+    font-family: var(--sacra);
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--pink);
+    font-style: italic;
+    text-shadow: var(--shadow);
+}
+
+.home .couple h2{
+    font-family: var(--sacra);
+    font-size: 2.5rem;
+    color: var(--pink);
+}
+
+.home .couple p{
+    font-weight: lighter;
+    font-size: 1.2rem;
+}
+
+.home .couple img{
+    width: 100%;
+}
+
+
+/* info */
+.info{
+    margin: 10rem 0;
+    padding: 10rem 0;
+    background-color: rgb(37, 37, 37);
+    height: 100vh;
+}
+
+.info .title p{
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+.info .title a{
+    background-color: white;
+    margin: .5rem 0 1.3rem 0;
+}
+
+.info .title a:hover{
+    color: black;
+}
+
+.info .card{
+    background-color: rgba(255, 255, 255, .3);
+    border: 2px solid white;
+    color: white;
+}
+
+.info .card p{
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+.info .card .card-header{
+    border-bottom: 1px solid white;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.info .card .card-footer{
+    border-top: 1px solid white;
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+/* story */
+.story{
+    position: relative;
+    padding: 3rem 0;
+}
+
+.story .title .top {
+    font-size: .9rem;
+    letter-spacing: 2px;
+}
+
+.timeline{
+    list-style: none;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.timeline::before{
+    content: "";
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    width: 2px;
+    background-color: #ccc;
+    left: 50%;
+}
+
+.timeline li{
+    margin-bottom: 14rem;
+    position: relative;
+}
+
+.timeline li::before,
+.timeline li::after{
+    content: "";
+    display: table;
+}
+
+.timeline li{
+    clear: both;
+}
+
+.timeline li .timeline-image{
+    height: 160px;
+    width: 160px;
+    background-color: #ccc;
+    position: absolute;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    background-size: cover;
+    background-position: center;
+}
+
+.timeline li .timeline-panel{
+    width: 40%;
+    padding: 2rem;
+    float: left;
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 10px;
+}
+
+.timeline li.timeline-inverted .timeline-panel{
+    float: right;
+}
+
+/* gallery */
+.gallery{
+    background-color: #f6f6f6;
+    padding:8rem 7%;
+}
+
+.gallery img{
+    object-fit: cover;
+}
+
+
+
+/* Meida Query */
+
+/* Laptop */
+@media (max-width: 1279px){
+    html{
+        font-size: 80%;
+    }
+
+    .home .hias{
+        bottom: -80px;
+    }
+
+    .timeline::before{
+        left: 80px;
+    }
+
+    .timeline li .timeline-image{
+        left: 80px;
+        top: 5%;
+    }
+
+    .timeline li .timeline-panel{
+        width: calc((100%-200px));
+        float: right;
+    }
+
+    .timeline li .timeline-image{
+        width: 150px;
+        height: 150px;
+    }
+
+    .timeline li .timeline-panel{
+        width: 60%;
+        transform: translateX(-100px);
+    }
+
+}
+
+/* Tablet */
+@media (max-width: 768px){
+    html{
+        font-size: 65.5%;
+    }
+
+    .home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero main h1{
+        font-size: 7rem;
+    }
+
+    .home .art1{
+        width: 60%;
+        opacity: .15;
+    }
+    
+    .home .art2{
+        width: 60%;
+        opacity: .15;
+    }
+    
+    .home .hias{
+        bottom: 0%;
+    
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .story .line{
+        left:10%;
+    }
+
+    .timeline li .timeline-image{
+        width: 100px;
+        height: 100px;
+    }
+
+    .timeline li .timeline-panel{
+        width: 60%;
+        transform: translateX(-30px);
+    }
+
+}
+
+/* Handphone */
+@media (max-width: 480px){
+    html{
+        font-size: 55.5%;
+    }
+
+}
